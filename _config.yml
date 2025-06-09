@@ -22,8 +22,6 @@ texture:
   navigation:
     - title: Home
       url: "/"
-    - title: About
-      url: "/about"
   social_links:
     github: venkyr
 
