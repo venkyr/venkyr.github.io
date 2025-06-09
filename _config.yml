@@ -24,6 +24,7 @@ texture:
       url: "/"
   social_links:
     github: venkyr
+    linkedIn: in/venkyraju
 
 # Show post excerpts on the home page
 show_excerpts: true
