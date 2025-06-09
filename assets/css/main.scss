@@ -356,9 +356,7 @@ footer {
     box-shadow: $card-shadow;
     
     h1 {
-        background: linear-gradient(135deg, $gradient-start, $gradient-end);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: $primary-color;
     }
 }
 
