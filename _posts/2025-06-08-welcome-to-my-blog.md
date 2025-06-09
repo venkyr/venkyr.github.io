@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "Welcome to My Blog"
+title: "Hello, world!"
 date: 2025-06-08
 ---
 
-This is my first blog post! I'm excited to start sharing my thoughts and experiences with you. In this blog, I'll be writing about various topics that interest me, including:
+After a long hiatus I'm back to blogging! I'll be writing about various topics that interest me, including:
 
-- Technology trends
 - Personal experiences
 - Tutorials and guides
 - Thoughts and ideas
