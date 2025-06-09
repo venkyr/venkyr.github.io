@@ -5,6 +5,9 @@ $background-color: #ffffff;
 $text-color: #2c3e50;
 $border-color: #ecf0f1;
 $code-background: #f8f9fa;
+$card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$gradient-start: #3498db;
+$gradient-end: #2c3e50;
 $font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
@@ -18,10 +21,10 @@ body {
     font-family: $font-sans;
     line-height: 1.8;
     color: $text-color;
-    background-color: $background-color;
-    max-width: 800px;
+    background-color: #f8f9fa;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,7 +56,7 @@ p {
 a {
     color: $accent-color;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
     
     &:hover {
         color: darken($accent-color, 10%);
@@ -62,25 +65,33 @@ a {
 }
 
 header {
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    color: white;
+    padding: 2rem;
     margin-bottom: 3rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid $border-color;
+    box-shadow: $card-shadow;
     
     nav {
         display: flex;
         gap: 2rem;
         align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
         
         a {
-            color: $primary-color;
+            color: white;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
             
             &:hover {
-                color: $accent-color;
+                background-color: rgba(255, 255, 255, 0.1);
                 text-decoration: none;
+                transform: translateY(-2px);
             }
         }
     }
@@ -88,19 +99,26 @@ header {
 
 main {
     min-height: 70vh;
+    padding: 0 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .post-list {
     list-style: none;
     padding: 0;
+    display: grid;
+    gap: 2rem;
     
     li {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid $border-color;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: $card-shadow;
+        transition: transform 0.3s ease;
         
-        &:last-child {
-            border-bottom: none;
+        &:hover {
+            transform: translateY(-5px);
         }
         
         h2 {
@@ -130,11 +148,20 @@ main {
 }
 
 .post {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: $card-shadow;
+    
     .post-header {
         margin-bottom: 3rem;
+        text-align: center;
         
         h1 {
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, $gradient-start, $gradient-end);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .post-meta {
@@ -169,25 +196,39 @@ main {
         
         blockquote {
             border-left: 4px solid $accent-color;
-            padding-left: 1rem;
+            padding: 1rem 1.5rem;
             margin: 1.5rem 0;
             color: $secondary-color;
+            background: rgba($accent-color, 0.05);
+            border-radius: 0 4px 4px 0;
         }
     }
 }
 
 footer {
     margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid $border-color;
-    color: $secondary-color;
-    font-size: 0.9rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    color: white;
     text-align: center;
+    
+    a {
+        color: white;
+        text-decoration: underline;
+        
+        &:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
 }
 
 @media (max-width: 768px) {
     body {
-        padding: 1rem;
+        padding: 0;
+    }
+    
+    main {
+        padding: 0 1rem;
     }
     
     h1 {
@@ -198,10 +239,24 @@ footer {
         font-size: 1.75rem;
     }
     
-    header nav {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
+    header {
+        padding: 1rem;
+        
+        nav {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+    }
+    
+    .home-intro {
+        padding: 2rem 1rem;
+    }
+    
+    .post-card {
+        .post-card-content {
+            padding: 1.5rem;
+        }
     }
 }
 
@@ -209,10 +264,17 @@ footer {
 .home-intro {
     text-align: center;
     margin: 4rem 0;
+    padding: 3rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: $card-shadow;
     
     h1 {
         font-size: 3rem;
         margin-bottom: 1rem;
+        background: linear-gradient(135deg, $gradient-start, $gradient-end);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     
     .lead {
@@ -236,8 +298,92 @@ footer {
     display: inline-block;
     margin-top: 1rem;
     font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    color: white;
+    border-radius: 4px;
+    transition: all 0.3s ease;
     
     &:hover {
         text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: $card-shadow;
+    }
+}
+
+// Blog page styles
+.blog-header {
+    text-align: center;
+    margin: 2rem 0 4rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: $card-shadow;
+    
+    h1 {
+        background: linear-gradient(135deg, $gradient-start, $gradient-end);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.blog-posts {
+    display: grid;
+    gap: 2rem;
+}
+
+.post-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: $card-shadow;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+    
+    .post-card-content {
+        padding: 2rem;
+    }
+    
+    h2 {
+        border: none;
+        padding: 0;
+        margin-top: 0;
+        
+        a {
+            color: $primary-color;
+            
+            &:hover {
+                color: $accent-color;
+            }
+        }
+    }
+}
+
+// Footer styles
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    
+    .footer-links {
+        margin: 1rem 0;
+        
+        a {
+            margin: 0 1rem;
+            color: white;
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    .footer-built {
+        font-size: 0.9rem;
+        opacity: 0.8;
     }
 } 
