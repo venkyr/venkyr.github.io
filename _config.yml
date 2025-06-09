@@ -25,6 +25,7 @@ texture:
   social_links:
     github: venkyr
     linkedIn: in/venkyraju
+  footer_text: "Built with ❤️ using Jekyll and Texture theme"
 
 # Show post excerpts on the home page
 show_excerpts: true
