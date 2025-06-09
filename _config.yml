@@ -19,6 +19,7 @@ texture:
   date_format: "%b %-d, %Y"
   style: blue
   showNav: true
+  showFooter: true
   navigation:
     - title: Home
       url: "/"
