@@ -11,6 +11,6 @@ This is my first blog post! I'm excited to start sharing my thoughts and experie
 - Tutorials and guides
 - Thoughts and ideas
 
-I created this blog using [Cursor](https://cursor.sh), an AI-assisted Integrated Development Environment (IDE) based on Microsoft Visual Studio Code.  It
+The blog is built with [Jekyll](https://jekyllrb.com) and hosted on [GitHub Pages](https://pages.github.com).  I used "vibe coding" with [Cursor](https://cursor.sh) to setup Jekyll on Github Pages as I was not familiar with either.  Cursor is an AI-assisted Integrated Development Environment (IDE) based on Microsoft Visual Studio Code.
 
 Stay tuned for more content coming soon! 
