@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Home
+layout: home
 ---
 
 <div class="home-intro">
