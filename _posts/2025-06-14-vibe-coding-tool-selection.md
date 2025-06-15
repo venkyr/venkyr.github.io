@@ -22,30 +22,39 @@ the code to send the data to InfluxDB but it was messy and has been on my TODO l
 for several months.  What better way to take care of this technical debt than to use vibe coding, 
 and put both Cursor and Windsurf to the test!
 
-I created a project directory for each tool and placed my low-level python modules in both.  
-I then gave both tools the following prompt:
+I created a project directory for each tool and placed my low-level python modules in both. I then 
+gave both tools the following prompt:
 
 ```
 
 I have 4 python files here I need you to analyze.
 
-1. ac_currents.py has a get function that returns a named tuple with AC current values.
+    1. ac_currents.py has a get function that returns a named tuple with 
+       AC current values.
 
-2. batt_status.py has a get function that returns a named tuple with various battery parameters.
+    2. batt_status.py has a get function that returns a named tuple with 
+       various battery parameters.
 
-3. inverter.py has a is_on() function that returns True if the inverter is running, false otherwise.
+    3. inverter.py has a is_on() function that returns True if the inverter is 
+       running, false otherwise.
 
-4. charger.py has a is_on() function that returns True if the charger is running, false otherwise.
+    4. charger.py has a is_on() function that returns True if the charger is 
+       running, false otherwise.
 
 I need a new python script that does the following:
 
-1. Read a config.ini file containing influxdb configuration parameters.  The name of the influxdb bucket should also be in the config file.
+    1. Read a config.ini file containing influxdb configuration parameters.
+       The name of the influxdb bucket should also be in the config file.
 
-2. Every minute (configurable in the config file), use the functions described above to read the AC currents, battery parameters, charger and inverter states, and send them to my influxdb instance.
+    2. Every minute (configurable in the config file), use the functions described 
+       above to read the AC currents, battery parameters, charger and inverter states,
+       and send them to my influxdb instance.
 
-3. Use the name of the named tuples for measurement fields, and the tuple value names for the fields.
+    3. Use the name of the named tuples for measurement fields, and the tuple value
+       names for the fields.
 
-4. For the inverter and charger, use a measurement called "Controllers" and the fields to "inverter" and "charger".  Use 0 and 1 for False and True respectively.
+    4. For the inverter and charger, use a measurement called "Controllers" and the 
+       fields to "inverter" and "charger".  Use 0 and 1 for False and True respectively.
 ```
 
 Both tools generated a new python module, a config file for InfluxDB, and a requirements.txt file for pip.  
