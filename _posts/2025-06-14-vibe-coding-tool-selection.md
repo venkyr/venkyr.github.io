@@ -57,8 +57,8 @@ I need a new python script that does the following:
        fields to "inverter" and "charger".  Use 0 and 1 for False and True respectively.
 ```
 
-Both tools generated a new python module, a config file for InfluxDB, and a requirements.txt file for pip.  
-However, Windsurf was disappointing from the start:
+Both tools generated a new python module, a config file for InfluxDB, and a requirements.txt file 
+for pip. However, Windsurf was disappointing from the start:
 
 - The python code it generated had a syntax error (I mean, really!)
 - After a prompt to fix the error, the new script generated a runtime error.  Another prompt fixed this error.
